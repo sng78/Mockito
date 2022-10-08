@@ -51,39 +51,39 @@ class MessageTest {
     @Order(3)
     @DisplayName("Проверка по стране RUSSIA")
     void TestRussia() {
-        Mockito.when(geoServiceMock.byIp(Mockito.<String>any())).thenReturn(new Location(null, Country.RUSSIA, null, 0));
+        Mockito.when(geoServiceMock.byIp(Mockito.any())).thenReturn(new Location(null, Country.RUSSIA, null, 0));
         Mockito.when(localizationServiceMock.locale(Country.RUSSIA)).thenReturn("Добро пожаловать");
         MessageSender messageSender = new MessageSenderImpl(geoServiceMock, localizationServiceMock);
-        Assertions.assertEquals("Добро пожаловать", messageSender.send(Mockito.<String, String>anyMap()));
+        Assertions.assertEquals("Добро пожаловать", messageSender.send(Mockito.anyMap()));
     }
 
     @Test
     @Order(4)
     @DisplayName("Проверка по стране USA")
     void TestUSA() {
-        Mockito.when(geoServiceMock.byIp(Mockito.<String>any())).thenReturn(new Location(null, Country.USA, null, 0));
+        Mockito.when(geoServiceMock.byIp(Mockito.any())).thenReturn(new Location(null, Country.USA, null, 0));
         Mockito.when(localizationServiceMock.locale(Country.USA)).thenReturn("Welcome");
         MessageSender messageSender = new MessageSenderImpl(geoServiceMock, localizationServiceMock);
-        Assertions.assertEquals("Welcome", messageSender.send(Mockito.<String, String>anyMap()));
+        Assertions.assertEquals("Welcome", messageSender.send(Mockito.anyMap()));
     }
 
     @Test
     @Order(5)
     @DisplayName("Проверка по стране BRAZIL")
     void TestBRAZIL() {
-        Mockito.when(geoServiceMock.byIp(Mockito.<String>any())).thenReturn(new Location(null, Country.BRAZIL, null, 0));
+        Mockito.when(geoServiceMock.byIp(Mockito.any())).thenReturn(new Location(null, Country.BRAZIL, null, 0));
         Mockito.when(localizationServiceMock.locale(Country.BRAZIL)).thenReturn("Welcome");
         MessageSender messageSender = new MessageSenderImpl(geoServiceMock, localizationServiceMock);
-        Assertions.assertEquals("Welcome", messageSender.send(Mockito.<String, String>anyMap()));
+        Assertions.assertEquals("Welcome", messageSender.send(Mockito.anyMap()));
     }
 
     @Test
     @Order(6)
     @DisplayName("Проверка по стране GERMANY")
     void TestGERMANY() {
-        Mockito.when(geoServiceMock.byIp(Mockito.<String>any())).thenReturn(new Location(null, Country.GERMANY, null, 0));
+        Mockito.when(geoServiceMock.byIp(Mockito.any())).thenReturn(new Location(null, Country.GERMANY, null, 0));
         Mockito.when(localizationServiceMock.locale(Country.GERMANY)).thenReturn("Welcome");
         MessageSender messageSender = new MessageSenderImpl(geoServiceMock, localizationServiceMock);
-        Assertions.assertEquals("Welcome", messageSender.send(Mockito.<String, String>anyMap()));
+        Assertions.assertEquals("Welcome", messageSender.send(Mockito.anyMap()));
     }
 }
